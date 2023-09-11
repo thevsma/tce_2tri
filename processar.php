@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/1a3d298cfc.js" crossorigin="anonymous"></script>
     <title>Resultados da Simulação</title>
 </head>
 
@@ -35,35 +36,26 @@
 
         R::store($i);
 
-        function calcularRendimento($inicial, $mensal, $taxa_rendimento)
+        function calcularRendimento($valor_inicial, $aporte_mensal, $taxa_rendimento)
         {
-            $rendimento = ($inicial + $mensal) * ($taxa_rendimento / 100);
-            $total = $inicial + $mensal + $rendimento;
+            $rendimento = ($valor_inicial + $aporte_mensal) * ($taxa_rendimento / 100);
+            $total = $valor_inicial + $aporte_mensal + $rendimento;
             return array($rendimento, $total);
         }
 
-        $aporte_inicial = $i->inicial;
-        $periodo = $i->periodo;
-        $rendimento_mensal = $i->taxa_rendimento;
-        $aporte_mensal = $i->mensal;
+        if (isset($_POST['submit'])) {
+            $cliente = $_POST['cliente'];
+            $aporte_inicial = floatval($_POST['aporte_inicial']);
+            $periodo = intval($_POST['periodo']);
+            $rendimento_mensal = floatval($_POST['rendimento']) / 100;
+            $aporte_mensal = floatval($_POST['aporte_mensal']);
 
-        $valor_inicial = $aporte_inicial;
+            $valor_inicial = $aporte_inicial;
 
-        echo '<table border="1">';
-        echo '<tr><th>Mês</th><th>Valor Inicial (R$)</th><th>Aporte (R$)</th><th>Rendimento (R$)</th><th>Total (R$)</th></tr>';
+            echo '<table border="1">';
+            echo '<tr><th>Mês</th><th>Valor Inicial (R$)</th><th>Aporte (R$)</th><th>Rendimento (R$)</th><th>Total (R$)</th></tr>';
 
-        for ($mes = 1; $mes <= $periodo; $mes++) {
-            if ($mes == 1) {
-                list($rendimento, $total) = calcularRendimento($valor_inicial, 0, $rendimento_mensal);
-                echo '<tr>';
-                echo '<td>' . $mes . '</td>';
-                echo '<td>' . number_format($valor_inicial, 2, ',', '.') . '</td>';
-                echo '<td>' . number_format(0, 2, ',', '.') . '</td>';
-                echo '<td>' . number_format($rendimento, 2, ',', '.') . '</td>';
-                echo '<td>' . number_format($total, 2, ',', '.') . '</td>';
-                echo '</tr>';
-                $valor_inicial = $total;
-            } else {
+            for ($mes = 1; $mes <= $periodo; $mes++) {
                 list($rendimento, $total) = calcularRendimento($valor_inicial, $aporte_mensal, $rendimento_mensal);
                 echo '<tr>';
                 echo '<td>' . $mes . '</td>';
@@ -74,15 +66,16 @@
                 echo '</tr>';
                 $valor_inicial = $total;
             }
+            echo '</table>';
         }
-        echo '</table>';
-        ?>
+        ?><br>
+
+        <div class="entrada-link">
+            <a href="entrada.html"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
     </main>
 
+    <br>
     <footer>
-        <p><a href="entrada.html">Voltar</a></p>
-        <p>&copy;2023 - Matheus Vieira e Cézar Passos</p>
+        <p>&copy;2023 - Matheus Vieira & Cézar Passos</p>
     </footer>
-</body>
-
-</html>

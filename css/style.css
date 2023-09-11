@@ -1,5 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-h1, h2, a{
+h1,
+h2,
+a {
     font-family: 'Poppins', sans-serif;
+}
+
+.home-link,
+.entrada-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100px;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    text-align: center;
+    border-color: black;
+}
+
+tr:nth-child(even) {
+    background-color: grey;
+}
+
+td {
+    width: 45px;
+    height: 25px;
+    text-align: center;
+}
+
+h2,
+footer {
+    color: white;
+    padding: 20px;
+    background-color: black;
+}
+
+
+h1 {
+    padding: 20px;
+    background-color: lightgrey;
+    border-style: solid;
+    border-color: grey;
+    border-width: 1.7px;
 }

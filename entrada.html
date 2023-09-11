@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/1a3d298cfc.js" crossorigin="anonymous"></script>
     <title>Simulação de Investimento</title>
 </head>
 
@@ -17,35 +18,43 @@
     <main>
         <h1>Simulação de Investimento</h1>
 
-        <form action="processar.php" method="post">
+        <!-- Forms -->
+
+        <form method="post" action="processar.php">
             <fieldset>
-                <legend>Dados</legend>
+                <legend>Dados do Investimento</legend>
+                <label for="cliente">Cliente:</label>
+                <input type="text" name="cliente" required><br><br>
 
-                <label for="nome">Nome do Cliente</label>
-                <input type="text" name="nome" id="nome">
-                <br>
 
-                <label for="inicial">Aporte Inicial (R$)</label>
-                <input type="number" name="inicial" id="inicial" step="0.01" value="" required>
-                <br>
+                <label for="aporte_inicial">Aporte Inicial (R$):</label>
+                <input type="number" name="aporte_inicial" required><br><br>
 
-                <label for="mensal">Aporte Mensal (R$)</label>
-                <input type="number" name="mensal" id="mensal" step="0.01" value="" required>
-                <br>
 
-                <label for="taxa_rendimento">Rendimento (%)</label>
-                <input type="number" name="taxa_rendimento" id="taxa_rendimento" step="0.01" value="" required>
-                <br>
+                <label for="aporte_mensal">Aporte Mensal (R$):</label>
+                <input type="number" name="aporte_mensal" required><br><br>
 
-                <label for="periodo">Período (Meses)</label>
-                <input type="number" name="periodo" id="periodo" value="" required>
-                <br>
 
-                <button type="submit">Simular</button>
+                <label for="rendimento">Rendimento Mensal (%):</label>
+                <input type="number" name="rendimento" step="0.01" required><br><br>
+
+
+                <label for="periodo">Período (meses):</label>
+                <input type="number" name="periodo" required><br><br>
+
+
+                <input type="submit" name="submit" value="Simular">
             </fieldset>
-        </form>
+        </form><br>
+        <!-- /Forms-->
+
+        <div class="home-link">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+        </div>
+
     </main>
 
+    <br>
     <footer>
         <p>&copy;2023 - Matheus Vieira e Cézar Passos</p>
     </footer>

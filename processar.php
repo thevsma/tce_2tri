@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Bem Vindo à Fintech!</title>
+    <title>Resultados da Simulação</title>
 </head>
 
 <body>
@@ -15,9 +15,7 @@
     </header>
 
     <main>
-        <h1>Página Inicial</h1>
-        <p><a href="entrada.html">Simular</a></p>
-        <p><a href="historico.php">Histórico</a></p>
+        <h1>Resultados</h1>
     </main>
 
     <footer>

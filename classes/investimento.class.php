@@ -3,6 +3,6 @@ class Investimento{
     public $nomeCliente;
     public $inicial;
     public $mensal;
-    public $rendimento;
+    public $taxa_rendimento;
     public $periodo;
 }

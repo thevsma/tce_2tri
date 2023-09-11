@@ -6,11 +6,12 @@ class Processar
         require_once 'autoloader.class.php';
 
         R::setup(
-            'mysql:host=localhost;dbname=mydatabase',
+            'mysql:host=localhost;dbname=fintech',
             'root',
             ''
         );
 
         R::store($investimento);
+        R::close();
     }
 }

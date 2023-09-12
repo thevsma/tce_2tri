@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/1a3d298cfc.js" crossorigin="anonymous"></script>
     <title>Resultados da Simulação</title>
 </head>
 
@@ -92,7 +93,9 @@
     </main>
 
     <footer>
-        <p><a href="entrada.html">Voltar</a></p>
+        <div class="entrada-link">
+            <p><i class="fa-solid fa-arrow-left"></i><a href="entrada.html">Voltar</a></p>
+        </div>
         <p>&copy;2023 - Matheus Vieira e Cézar Passos</p>
     </footer>
 </body>

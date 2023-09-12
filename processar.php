@@ -15,7 +15,9 @@
     </header>
 
     <main>
-        <h1>Resultados</h1>
+        <h1>Resultado da Simulação</h1>
+
+        <h3>Dados:</h3>
 
         <?php
         require_once 'classes/autoloader.class.php';
@@ -30,11 +32,21 @@
         $i->nome = $_POST['nome'];
         $i->inicial = $_POST['inicial'];
         $i->mensal = $_POST['mensal'];
-        $i->taxa_rendimento = $_POST['rendimento'];
+        $i->taxa_rendimento = $_POST['taxa_rendimento'];
         $i->periodo = $_POST['periodo'];
 
         R::store($i);
+        $aux = R::load('investimento', $i);
 
+        ?>
+
+        <p>ID da Simulação: <?php echo isset($aux) ? $aux->id : '' ?></p>
+        <p>Cliente: <?php echo isset($aux) ? $aux->nome : '' ?></p>
+        <p>Aporte Inicial (R$): <?php echo isset($aux) ? $aux->inicial : '' ?></p>
+        <p>Aporte Mensal (R$): <?php echo isset($aux) ? $aux->mensal : '' ?></p>
+        <p>Rendimento (%): <?php echo isset($aux) ? $aux->taxa_rendimento : '' ?></p>
+
+        <?php
         function calcularRendimento($inicial, $mensal, $taxa_rendimento)
         {
             $rendimento = ($inicial + $mensal) * ($taxa_rendimento / 100);

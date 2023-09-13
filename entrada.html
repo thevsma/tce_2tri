@@ -18,39 +18,42 @@
     <main>
         <h1>Simulação de Investimento</h1>
 
-        <form action="processar.php" method="post">
-            <fieldset>
-                <legend>Dados</legend>
+        <div id="index">
+            <form action="processar.php" method="post">
+                <fieldset>
+                    <legend>Dados</legend>
 
-                <label for="nome">Nome do Cliente</label>
-                <input type="text" name="nome" id="nome">
-                <br>
+                    <label for="nome">Nome do Cliente:</label>
+                    <input type="text" name="nome" id="nome">
+                    <br>
 
-                <label for="inicial">Aporte Inicial (R$)</label>
-                <input type="number" name="inicial" id="inicial" step="0.01" value="" required>
-                <br>
+                    <label for="inicial">Aporte Inicial (R$):</label>
+                    <input type="number" name="inicial" id="inicial" step="0.01" value="" required>
+                    <br>
 
-                <label for="mensal">Aporte Mensal (R$)</label>
-                <input type="number" name="mensal" id="mensal" step="0.01" value="" required>
-                <br>
+                    <label for="mensal">Aporte Mensal (R$):</label>
+                    <input type="number" name="mensal" id="mensal" step="0.01" value="" required>
+                    <br>
 
-                <label for="taxa_rendimento">Rendimento (%)</label>
-                <input type="number" name="taxa_rendimento" id="taxa_rendimento" step="0.01" value="" required>
-                <br>
+                    <label for="taxa_rendimento">Rendimento (%):</label>
+                    <input type="number" name="taxa_rendimento" id="taxa_rendimento" step="0.01" value="" required>
+                    <br>
 
-                <label for="periodo">Período (Meses)</label>
-                <input type="number" name="periodo" id="periodo" value="" required>
-                <br>
+                    <label for="periodo">Período (Meses):</label>
+                    <input type="number" name="periodo" id="periodo" value="" required>
+                    <br>
 
-                <button type="submit">Simular</button>
-            </fieldset>
-        </form>
+                    <button type="submit">Simular</button>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="home-link">
+            <p><a href="index.html"><i class="fa-solid fa-house"></i></a></p>
+        </div>
     </main>
 
     <footer>
-        <div class="home-link">
-            <p><i class="fa-solid fa-house"></i><a href="index.html">Voltar</a></p>
-        </div>
         <p>&copy;2023 - Matheus Vieira e Cézar Passos</p>
     </footer>
 </body>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/1a3d298cfc.js" crossorigin="anonymous"></script>
     <title>Histórico de Simulações</title>
 </head>
 
@@ -16,17 +17,17 @@
     <main>
         <h1>Histórico de Simulações</h1>
 
-        <form method="post">
-            <fieldset>
-                <legend>Simulação que deseja recuperar</legend>
+        <div id="rec">
+            <form method="post">
+                <fieldset>
+                    <label for="idSim">ID da Simulação</label>
+                    <input type="number" name="idSim" id="idSim" step="1" value="<?php echo isset($_POST['idSim']) ? $_POST['idSim'] : '' ?>" required>
+                    <br>
 
-                <label for="idSim">ID da Simulação</label>
-                <input type="number" name="idSim" id="idSim" step="1" value="<?php echo isset($_POST['idSim']) ? $_POST['idSim'] : '' ?>" required>
-                <br>
-
-                <input type="submit" value="Recuperar" name="rec" id="rec">
-            </fieldset>
-        </form>
+                    <input type="submit" value="Recuperar" name="rec" id="rec">
+                </fieldset>
+            </form>
+        </div>
 
         <?php
         require_once 'classes/autoloader.class.php';
@@ -42,11 +43,13 @@
         }
         ?>
 
-        <p>ID da Simulação: <?php echo isset($aux) ? $aux->id : '' ?></p>
-        <p>Cliente: <?php echo isset($aux) ? $aux->nome : '' ?></p>
-        <p>Aporte Inicial (R$): <?php echo isset($aux) ? $aux->inicial : '' ?></p>
-        <p>Aporte Mensal (R$): <?php echo isset($aux) ? $aux->mensal : '' ?></p>
-        <p>Rendimento (%): <?php echo isset($aux) ? $aux->taxa_rendimento : '' ?></p>
+        <div id="centro">
+            <p>ID da Simulação: <?php echo isset($aux) ? $aux->id : '' ?></p>
+            <p>Cliente: <?php echo isset($aux) ? $aux->nome : '' ?></p>
+            <p>Aporte Inicial (R$): <?php echo isset($aux) ? $aux->inicial : '' ?></p>
+            <p>Aporte Mensal (R$): <?php echo isset($aux) ? $aux->mensal : '' ?></p>
+            <p>Rendimento (%): <?php echo isset($aux) ? $aux->taxa_rendimento : '' ?></p>
+        </div>
 
         <?php
         if (isset($_POST['rec'])) {
@@ -93,10 +96,13 @@
             echo '</table>';
         }
         ?>
+
+        <div class="home-link">
+            <p><a href="index.html"><i class="fa-solid fa-house"></i></a></p>
+        </div>
     </main>
 
     <footer>
-        <p><a href="index.html">Voltar</a></p>
         <p>&copy;2023 - Matheus Vieira e Cézar Passos</p>
     </footer>
 </body>

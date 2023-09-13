@@ -2,7 +2,7 @@
 
 h1,
 h2,
-a {
+a, p, table, form, input, h3 {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -20,10 +20,15 @@ table {
     border-collapse: collapse;
     text-align: center;
     border-color: black;
+    width: 45%;
 }
 
 tr:nth-child(even) {
-    background-color: grey;
+    background-color: lightgrey;
+}
+
+tbody tr:nth-child(even):hover {
+    background-color: rgb(150, 150, 150);
 }
 
 td {
@@ -35,15 +40,71 @@ td {
 h2,
 footer {
     color: white;
-    padding: 20px;
+    padding: 12px 30px;
     background-color: black;
+    border-radius: 12px;
+    margin: 7px 20%;
+    text-align: left;
 }
 
 
 h1 {
-    padding: 20px;
+    padding: 15px 30px;
     background-color: lightgrey;
     border-style: solid;
     border-color: grey;
     border-width: 1.7px;
+    border-radius: 12px;
+    margin: 7px 20%;
+    text-align: left;
+}
+
+div#centro{
+    margin: 0 28%;
+    border-radius: 12px;
+    text-align: left;
+    padding-bottom: 12px;
+}
+
+div#rec{
+    margin: 0 25.3%;
+    border-radius: 12px;
+    padding: 2em;
+    text-align: left;
+}
+
+a:link, a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(120, 120, 120);
+    text-decoration: none;
+}
+
+fieldset{
+    border-radius: 6px;
+}
+
+div#index{
+    margin: 0 22%;
+    border-radius: 12px;
+    text-align: left;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+
+button{
+    border-width: thin;
+    border-radius: 3px;
+}
+
+button:hover, input#rec:hover{
+    background-color: rgb(200, 200, 200);
+}
+
+input#rec{
+    border-width: thin;
+    border-radius: 3px;
 }

@@ -18,8 +18,6 @@
     <main>
         <h1>Resultado da Simulação</h1>
 
-        <h3>Dados:</h3>
-
         <?php
         require_once 'classes/autoloader.class.php';
 
@@ -41,11 +39,14 @@
 
         ?>
 
-        <p>ID da Simulação: <?php echo isset($aux) ? $aux->id : '' ?></p>
-        <p>Cliente: <?php echo isset($aux) ? $aux->nome : '' ?></p>
-        <p>Aporte Inicial (R$): <?php echo isset($aux) ? $aux->inicial : '' ?></p>
-        <p>Aporte Mensal (R$): <?php echo isset($aux) ? $aux->mensal : '' ?></p>
-        <p>Rendimento (%): <?php echo isset($aux) ? $aux->taxa_rendimento : '' ?></p>
+        <div id="centro">
+            <h3>Dados: </h3>
+            <p>ID da Simulação: <?php echo isset($aux) ? $aux->id : '' ?></p>
+            <p>Cliente: <?php echo isset($aux) ? $aux->nome : '' ?></p>
+            <p>Aporte Inicial (R$): <?php echo isset($aux) ? $aux->inicial : '' ?></p>
+            <p>Aporte Mensal (R$): <?php echo isset($aux) ? $aux->mensal : '' ?></p>
+            <p>Rendimento (%): <?php echo isset($aux) ? $aux->taxa_rendimento : '' ?></p>
+        </div>
 
         <?php
         function calcularRendimento($inicial, $mensal, $taxa_rendimento)
@@ -90,12 +91,13 @@
         }
         echo '</table>';
         ?>
+
+        <div class="entrada-link">
+            <p><a href="entrada.html"><i class="fa-solid fa-arrow-left"></i></a></p>
+        </div>
     </main>
 
     <footer>
-        <div class="entrada-link">
-            <p><i class="fa-solid fa-arrow-left"></i><a href="entrada.html">Voltar</a></p>
-        </div>
         <p>&copy;2023 - Matheus Vieira e Cézar Passos</p>
     </footer>
 </body>
